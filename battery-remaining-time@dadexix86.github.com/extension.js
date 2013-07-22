@@ -39,9 +39,6 @@ const Main = imports.ui.main;
 const Myself = imports.misc.extensionUtils.getCurrentExtension();
 const Convenience = Myself.imports.convenience;
 
-function init() {
-}
-
 const SETTING_SHOW_ICON='showicon';
 const SETTING_SHOW_ARROW_ON_CHARGE='showarrowoncharge';
 const SETTING_SHOW_PERCENTAGE='showpercentage';
@@ -53,6 +50,10 @@ const SETTING_DEBUG='debug';
 
 let settings = Convenience.getSettings('org.gnome.shell.extensions.battery-remaining-time');
 let debug = Convenience.getSettings().get_boolean(SETTING_DEBUG);
+
+function init() {
+  Convenience.initTranslations("battery-remaining-time");
+}
 
 function monkeypatch(batteryArea) {
 

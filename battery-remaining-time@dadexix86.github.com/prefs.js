@@ -61,6 +61,8 @@ function init() {
   let schema = 'org.gnome.shell.extensions.battery-remaining-time';
   settings = Convenience.getSettings(schema);
 
+  Convenience.initTranslations("battery-remaining-time");
+
   boolSettings = {
     showarrowoncharge: {
       label: _("Show the arrow."),
